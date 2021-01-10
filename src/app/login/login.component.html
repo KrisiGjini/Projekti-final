@@ -1,0 +1,48 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="navbar-header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1UE1kQze3mtGvrwpVC7m86RMwgUe0lRNepQ&usqp=CAU" style="width: 70px;"alt="">
+
+     <a href="#"class="navbar-brand" style="color: #153e90;padding-bottom: 5px; font-family: 'Merriweather'; font-size: 25px;margin-left: 20px;">Courses Academy</a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     </div>
+      </nav>
+      <hr style="width:100%;margin-top: 0px; border-width:1px;">
+
+      <div class="row">
+        <div class="col-md-6">
+          <img src="https://cdn2.hubspot.net/hubfs/1877810/Blog%20Post%20Graphics/Diversity.jpg" class="img-fluid" alt="Responsive image">
+      </div>
+      <div class="col-md-6">
+        <div class="alert alert-info">
+            <strong>By logging into Courses Academy, you agree to our Terms of use and Privacy Policy.</strong><br />
+         </div>
+        
+    <div class="card">
+        <h4 class="card-header">Good to see you again!</h4>
+        <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+        </div>
+    </div>
+</div>            

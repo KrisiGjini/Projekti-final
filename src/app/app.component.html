@@ -1,0 +1,24 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-light bg-white" *ngIf="currentUser">
+    <div class="navbar-nav">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1UE1kQze3mtGvrwpVC7m86RMwgUe0lRNepQ&usqp=CAU" style="width: 60px;"alt="">
+        <a class="nav-item nav-link" style="color: blue; font-size: 20px;"routerLink="/">Home</a>
+        <a class="nav-item nav-link"style="color: blue;font-size: 20px;" routerLink="/admin" *ngIf="isAdmin">Admin</a>
+        <a class="nav-item nav-link" style="color: blue;font-size: 20px; position: absolute; right: 40px;" (click)="logout()">Logout</a>
+         <a class="nav-item nav-link" style="color: blue; font-size: 20px;" routerLink="/teacher" *ngIf="isTeacher">Teacher</a>
+        <a class="nav-item nav-link" style="color: blue; font-size: 20px;" routerLink="/kurse/krijo-kurse" *ngIf="isTeacher || isAdmin">Krijo Kurse</a>
+        <a class="nav-item nav-link" style="color: blue; font-size: 20px;" routerLink="/student" *ngIf="isStudent">Student</a>
+
+      </div>
+           </nav>
+           <hr style="width:100%;margin-top: 0px; border-width:1px;">
+<!-- main app container -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+ 

@@ -1,0 +1,22 @@
+﻿<div class="card mt-4">
+    <h4 class="card-header">Admin</h4>
+    <div class="card-body">
+        <p>Kjo faqe mund te aksesohet <u>vetem nga administratori</u>.</p>
+        <p class="mb-1">All users from secure (admin only) api end point:</p>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="users">
+            <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
+        </ul>
+    </div>
+ 
+<div class="row">
+    <div class="col-md-6">
+      <img src="https://cdn2.hubspot.net/hubfs/1877810/Blog%20Post%20Graphics/Diversity.jpg" class="img-fluid" alt="Responsive image">
+  </div>
+  </div>
+</div>
+
+<app-kurset-e-mia></app-kurset-e-mia>
+<app-zgjidh-kurset></app-zgjidh-kurset>
+<app-krijo-kurse></app-krijo-kurse>
+  
