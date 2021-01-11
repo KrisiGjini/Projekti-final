@@ -1,0 +1,1 @@
+export * from './kurset-e-mia.component';

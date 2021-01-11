@@ -4,10 +4,12 @@ import { HomeComponent } from './home';
 import { AdminComponent } from './admin';
 import { TeacherComponent } from './teacher';
 import { KrijoKurseComponent } from './kurse/krijo-kurse';
+import { KursetEMiaComponent } from './kurse/kurset-e-mia';
 import { LoginComponent } from './login';
 import { AuthGuard } from './_helpers';
 import { Role } from './_models';
 import { StudentComponent } from './student';
+import { ZgjidhKursetComponent } from './kurse/zgjidh-kurset/zgjidh-kurset.component';
 
 const routes: Routes = [
     {
@@ -36,6 +38,16 @@ const routes: Routes = [
     {
         path: 'kurse/krijo-kurse',
         component: KrijoKurseComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'kurse/zgjidh-kurset',
+        component: ZgjidhKursetComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'kurse/kurset-e-mia',
+        component: KursetEMiaComponent,
         canActivate: [AuthGuard]
     },
     {
